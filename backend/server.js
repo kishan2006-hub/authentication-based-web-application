@@ -16,6 +16,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get("/healthz", (req, res) => {
+  res.status(200).send("OK");
+});
 app.use("/api/auth", authRouter);
 
 // Server
